@@ -47,12 +47,7 @@ The following datasets are included in this replication package:
 - `data_month_202506.dta`  
 - `daily_epu_202506.dta`  
 
-The following raw Excel files must be downloaded from public sources:
-
-- **New York Fed Survey of Consumer Expectations (SCE)** microdata (2013–latest)  
-- **Survey of Professional Forecasters (SPF)** microdata  
-
-URLs are provided in Section 2 below.
+The raw Excel files must be downloaded from public sources. See the URLs provided in Section 2.
 
 ---
 
