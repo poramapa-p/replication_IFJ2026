@@ -63,12 +63,6 @@ The following datasets are included in this repository:
 
 ---
 
-## Overview
-
-This repository contains all data and code required to reproduce the empirical results in the manuscript.
-
----
-
 # 1. File Structure
 
 The replication package consists of **Stata scripts, MATLAB scripts, Excel files, and datasets**.
@@ -138,15 +132,12 @@ Household dataset constructed from NY Fed Survey of Consumer Expectations (SCE):
 
 ---
 
-### `us_spf_202506.dta`
+### `us_spf_est_202506.dta`
 Survey of Professional Forecasters (SPF) dataset:
 
 https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/survey-of-professional-forecasters/historical-data/SPFmicrodata.xlsx  
 
----
-
-### `us_spf_est_202506.dta`
-Final SPF dataset including GBD subjective uncertainty measures.
+including GBD subjective uncertainty measures.
 
 ---
 
