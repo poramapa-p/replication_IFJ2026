@@ -177,9 +177,19 @@ https://www.policyuncertainty.com/media/All_Daily_Policy_Data.csv
 
 # 3. Recommended Run Order
 
-### Step 0
+### Step 0 (Optional – Data Assembly)
 Download raw SCE and SPF Excel files, then run:
 - all `0_*` scripts  
+This step assembles the raw data from the original public sources (SCE and SPF Excel files) and constructs the main datasets:
+
+- `us_hh_202506.dta`
+- `us_spf_202506.dta`
+
+**Note:**
+- This step is not required to reproduce the results in the paper.
+- The processed datasets are already included in the repository.
+- The assembled data may reflect updates beyond the sample used in the manuscript.
+- Users can skip this step and proceed directly to Step 1.
 
 ---
 
