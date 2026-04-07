@@ -1,219 +1,231 @@
-README.txt
+# Replication Package
 
-Replication Package for:
-"Certainty Amid Uncertainty: Relationship between Macroeconomic Uncertainty and Individual Expectations"
-Giulia Piccillo and Poramapa Poonpakdee
+## Paper
+**Certainty Amid Uncertainty: Relationship between Macroeconomic Uncertainty and Individual Expectations**  
+Giulia Piccillo and Poramapa Poonpakdee  
 
 Reproducibility package assembled on: 2026-01-08
 
-Authors and contact:
-Giulia Piccillo      g.piccillo@maastrichtuniversity.nl
-Poramapa Poonpakdee   poramapa.p@gmail.com
+---
 
-Computing environment:
-Stata 17 SE on Windows 11
-MATLAB R2021a
-Python 3.11 (used for DensityEst.py)
-Jupyter Notebook (for running Python scripts)
+## Authors and Contact
 
-Software licenses:
-Stata and MATLAB are proprietary software and require valid licenses.
-Python and Jupyter Notebook are open-source.
+- Giulia Piccillo — g.piccillo@maastrichtuniversity.nl  
+- Poramapa Poonpakdee — poramapa.p@gmail.com  
 
-Hardware and runtime:
-The replication was run on a standard laptop.
-Full replication (all scripts and figures) takes approximately 20 minutes.
+---
 
-Special hardware or setup:
-No GPU, parallel computing, or special hardware is required.
+## Computing Environment
 
-Data availability:
-The following datasets are included in this replication package:
-    us_hh_202506.dta
-    us_spf_est_202506.dta
-    data_quarter_202506.dta
-    data_month_202506.dta
-    daily_epu_202506.dta
+- Stata 17 SE (Windows 11)
+- MATLAB R2021a
+- Python 3.11 (for `DensityEst.py`)
+- Jupyter Notebook
 
-The raw Excel files must be downloaded from public sources. See the URLs provided in Section 2.
+---
 
+## Software Licenses
 
-This folder contains all data and code required to reproduce the empirical results in the manuscript.
+- Stata and MATLAB require valid licenses  
+- Python and Jupyter Notebook are open-source  
 
-----------------------------------------------------------------------
-1. FILE STRUCTURE
-----------------------------------------------------------------------
+---
 
-The replication package consists of Stata scripts, MATLAB scripts, Excel files, and Stata datasets.
+## Hardware and Runtime
 
-A. Script files
+- Replication was run on a standard laptop  
+- Full replication takes approximately **20 minutes**
+
+---
+
+## Special Requirements
+
+- No GPU, parallel computing, or special hardware required  
+
+---
+
+## Data Availability
+
+The following datasets are included:
+
+- `us_hh_202506.dta`
+- `us_spf_est_202506.dta`
+- `data_quarter_202506.dta`
+- `data_month_202506.dta`
+- `daily_epu_202506.dta`
+
+Raw Excel files must be downloaded from public sources (see Section 2 below).
+
+---
+
+## Overview
+
+This repository contains all data and code required to reproduce the empirical results in the manuscript.
+
+---
+
+# 1. File Structure
+
+The replication package consists of **Stata scripts, MATLAB scripts, Excel files, and datasets**.
+
+## A. Script Files
 
 Scripts are organized by numeric prefixes:
 
-0_*
-    These scripts import and combine the raw survey data from the original
-    Excel files (SCE and SPF) and create the main Stata datasets.
-    The original Excel files are not included in the package, but the
-    resulting Stata datasets are included.
+### `0_*`
+- Import and combine raw survey data (SCE and SPF)
+- Generate main datasets  
 
-    Outputs (included in the replication package):
-        us_hh_202506.dta
-        us_spf_202506.dta
+Outputs:
+- `us_hh_202506.dta`
+- `us_spf_202506.dta`
 
-1_*
-    These scripts compute the GBD-based subjective uncertainty measures
-    for professional forecasters (SPF). They use us_spf_202506.dta together
-    with the DensityEst.py code by Tao Wang 
-    (https://github.com/iworld1991/DensitySurveyEstimation).
+---
 
-    Output (included in the replication package):
-        us_spf_est_202506.dta
+### `1_*`
+- Compute GBD-based subjective uncertainty measures for SPF
+- Uses:
+  - `us_spf_202506.dta`
+  - External code: https://github.com/iworld1991/DensitySurveyEstimation  
 
+Output:
+- `us_spf_est_202506.dta`
 
-2_*
-    These scripts run all regressions reported in the manuscript and appendices.
+---
 
-        2_households   Regressions for the households dataset
-        2_spf          Regressions for the professional forecasters (SPF) dataset
+### `2_*`
+- Run all regressions in the paper and appendix  
 
-    These scripts produce all regression tables (exported as CSV files in the output folder).
+Subfolders:
+- `2_households` → household regressions  
+- `2_spf` → SPF regressions  
 
+Outputs:
+- Regression tables (CSV format, saved in `/output`)
 
-3_*
-    Excel file that collects household regression coefficients of
-    subjective uncertainty used to construct Figure 1.
+---
 
+### `3_*`
+- Excel file used to construct **Figure 1**
 
-4_*
-    MATLAB scripts used to produce Figure 3.
+---
 
+### `4_*`
+- MATLAB scripts used to produce **Figure 3**
 
-----------------------------------------------------------------------
-2. DATA FILES
-----------------------------------------------------------------------
+---
 
+# 2. Data Files
 
-The main Stata datasets are:
+## Main Datasets
 
-us_hh_202506.dta
-    Households dataset constructed by appending three waves of the
-    New York Fed Survey of Consumer Expectations (SCE) microdata:
+### `us_hh_202506.dta`
+Household dataset constructed from NY Fed Survey of Consumer Expectations (SCE):
 
-    2020–latest:
-    https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-latest.xlsx?sc_lang=en
+- 2020–latest  
+  https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-latest.xlsx  
 
-    2017–2019:
-    https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-complete-17-19.xlsx?sc_lang=en
+- 2017–2019  
+  https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-complete-17-19.xlsx  
 
-    2013–2016:
-    https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-complete-13-16.xlsx?sc_lang=en
+- 2013–2016  
+  https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-public-microdata-complete-13-16.xlsx  
 
+---
 
-us_spf_202506.dta
-    Survey of Professional Forecasters (SPF) dataset constructed
-    from the RGDP and PRGDP sheets of the historical SPF microdata:
+### `us_spf_202506.dta`
+Survey of Professional Forecasters (SPF) dataset:
 
-    https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/survey-of-professional-forecasters/historical-data/SPFmicrodata.xlsx
+https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/survey-of-professional-forecasters/historical-data/SPFmicrodata.xlsx  
 
-us_spf_est_202506.dta
-    Final SPF estimation dataset created by the 1_* scripts.
-    This file includes the GBD subjective uncertainty measures.
+---
 
-data_quarter_202506.dta
-    Quarterly macroeconomic dataset manually assembled by the authors
-    from the following public sources:
+### `us_spf_est_202506.dta`
+Final SPF dataset including GBD subjective uncertainty measures.
 
-    1. Economic Policy Uncertainty (EPU) index
-       Source: https://www.policyuncertainty.com/media/US_Policy_Uncertainty_Data.xlsx
-       Processing: monthly values averaged within each calendar quarter.
+---
 
-    2. Jurado et al. (JU) macroeconomic uncertainty index
-       Source: https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202508Update.zip
-       Processing: monthly values averaged within each calendar quarter.
+### `data_quarter_202506.dta`
+Quarterly macro dataset constructed from:
 
-    3. Real-time GDP growth (first, second, third, most recent releases)
-       Source: Philadelphia Fed Real-Time Data Set
-       https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/
-       real-time-data/data-files/xlsx/routput_first_second_third.xlsx
+1. Economic Policy Uncertainty (EPU)  
+   https://www.policyuncertainty.com/media/US_Policy_Uncertainty_Data.xlsx  
 
-    4. Forecaster disagreement (disagree_percent)
-       Constructed from SPF microdata using the Stata scripts 1_disagreement_*.
+2. Jurado et al. uncertainty index  
+   https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202508Update.zip  
 
-    This file was assembled by combining the above series manually
-    (copy-and-paste) in Excel and then saved as a Stata .dta file.
+3. Real-time GDP data (Philadelphia Fed)  
 
+4. Forecaster disagreement (constructed from SPF)
 
-data_month_202506.dta
-    Monthly macroeconomic dataset manually assembled by the authors
-    from the following public sources:
+---
 
-    1. Economic Policy Uncertainty (EPU) index
-       Source: https://www.policyuncertainty.com/media/US_Policy_Uncertainty_Data.xlsx
+### `data_month_202506.dta`
+Monthly macro dataset constructed from:
 
-    2. Jurado et al. (JU) macroeconomic uncertainty index
-       Source: https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202508Update.zip
+- EPU index  
+- Jurado uncertainty index  
+- Real-time employment data (Philadelphia Fed)
 
-    3. Real-time employment growth (first, second, third, most recent releases)
-       Source: Philadelphia Fed Real-Time Data Set
-       https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/
-       real-time-data/data-files/xlsx/employ_pct_chg_first_second_third.xlsx
+---
 
-    This file was assembled by combining the above series manually
-    (copy-and-paste) in Excel and then saved as a Stata .dta file.
+### `daily_epu_202506.dta`
+Daily EPU index:  
+https://www.policyuncertainty.com/media/All_Daily_Policy_Data.csv  
 
+---
 
-daily_epu_202506.dta
-    Daily Economic Policy Uncertainty (EPU) index.
-    Source: https://www.policyuncertainty.com/media/All_Daily_Policy_Data.csv
+# 3. Recommended Run Order
 
-    This file was downloaded as a CSV file and imported into Stata.
+### Step 0
+Download raw SCE and SPF Excel files, then run:
+- all `0_*` scripts  
 
+---
 
-----------------------------------------------------------------------
-3. RECOMMENDED RUN ORDER
-----------------------------------------------------------------------
+### Step 1
+Run all `1_*` scripts to compute:
+- forecaster disagreement  
+- GBD uncertainty measures  
 
-To reproduce all results from scratch:
+---
 
-Step 0
-    Download the raw SCE and SPF Excel files from the links provided in
-    Section 2 (Data Files). Then run all scripts starting with 0_* to
-    generate the main Stata datasets:
-        us_hh_202506.dta
-        us_spf_202506.dta
+### Step 2
+Run regression scripts:
+- `2_households`
+- `2_spf`
 
-Step 1
-    Run all scripts starting with 1_* to compute 
-    - Forecaster disagreement
-    - the GBD-based subjective uncertainty measures for professional forecasters and generate us_spf_est_202506.dta
+Outputs:
+- All tables (CSV format)
 
-Step 2
-    Run the regression scripts:
-        2_households   for household results
-        2_spf          for professional forecaster results
+---
 
-    These scripts generate all tables reported in the paper and appendices
-    (exported as CSV files).
+### Step 3
+Use `3_*` Excel file to construct **Figure 1**
 
-Step 3
-    Use the 3_* Excel file to construct Figure 1.
+---
 
-Step 4
-    Run the 4_* MATLAB scripts to generate Figure 3.
+### Step 4
+Run `4_*` MATLAB scripts to generate **Figure 3**
 
+---
 
-----------------------------------------------------------------------
-4. SOFTWARE AND NOTES
-----------------------------------------------------------------------
+# 4. Software Notes
 
-Some Stata scripts contain absolute file paths (for example,
-C:\Users\...\OneDrive\...). These should be edited to match the local
-file location before running.
+- Some scripts contain **absolute file paths**  
+  → must be edited before running  
 
-The following Stata packages are required:
-    reghdfe
-    eststo
-    esttab
+### Required Stata packages:
+- `reghdfe`
+- `eststo`
+- `esttab`
 
-----------------------------------------------------------------------
-End of README.txt
+---
+
+# Reproducibility Statement
+
+The numerical results in this manuscript were successfully reproduced by **CASCaD on 4 February 2026**.
+
+---
+
+# End of README
