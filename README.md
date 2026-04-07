@@ -46,15 +46,19 @@ Reproducibility package assembled on: 2026-01-08
 
 ## Data Availability
 
-The following datasets are included:
+Due to file size limitations, some processed datasets are hosted externally.
+
+The main processed dataset required to reproduce the results is available at:  
+https://doi.org/10.5281/zenodo.19449956
+
+Please download the dataset and place it in the `/data` directory before running the replication scripts. All scripts are written assuming this file path. Alternatively, users can modify file paths to match their local setup.
+
+The following datasets are included in this repository:
 
 - `us_hh_202506.dta`
-- `us_spf_est_202506.dta`
 - `data_quarter_202506.dta`
 - `data_month_202506.dta`
 - `daily_epu_202506.dta`
-
-Raw Excel files must be downloaded from public sources (see Section 2 below).
 
 ---
 
