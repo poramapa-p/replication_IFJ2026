@@ -46,7 +46,7 @@ Reproducibility package assembled on: 2026-01-08
 
 ## Data Availability
 
-Due to file size limitations, some processed datasets are hosted externally.
+Due to file size limitations, the processed datasets are hosted externally.
 
 The main processed dataset required to reproduce the results is available at:  
 https://doi.org/10.5281/zenodo.19449956
